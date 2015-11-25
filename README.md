@@ -12,7 +12,7 @@ This is an extenstion to the Episerver CMS that allows the use of managed pages 
 [AllowedTypes(new Type[] { typeof(CategoryPage) })]
 [IndexAsCategories]
 public virtual IEnumerable<ContentReference> Categories { get; set; }
-
+```
 3. In the view for CategoryPage, iterate the assigned content like so:
 
 ```C#
