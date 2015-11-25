@@ -26,7 +26,18 @@ Note that this is content page-centric. So, when viewing a content page (an `Art
 
 ```C#
 <ul>
-foreach(var page in CategoryManager.GetContent(thisCategoryPage.ContentLink))
+foreach(var page in CategoryManager.GetContent(Model.CurrentPage.ContentLink))
+{
+	<li>@Html.PageLink(page)</li>
+}
+</ul>
+```
+
+Alternately, there's an extension method on `PageData`:
+
+```C#
+<ul>
+foreach(var page in Model.CurrentPage.GetAssignedContent())
 {
 	<li>@Html.PageLink(page)</li>
 }
