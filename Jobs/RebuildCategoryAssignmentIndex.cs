@@ -16,6 +16,8 @@ namespace BlendInteractive.ExtendedCategories.Jobs
 
         public override string Execute()
         {
+            CategoriesManager.DeleteAll();
+
             var searchService = ServiceLocator.Current.GetInstance<IPageCriteriaQueryService>();
 
             foreach (var type in CategoriesManager.CategoryAssignmentProperties)
