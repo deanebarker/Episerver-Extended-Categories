@@ -9,9 +9,9 @@ namespace BlendInteractive.ExtendedCategories.Extensions
 {
     public static class ExtendedCategoriesExtensionMethods
     {
-        public static IEnumerable<PageData> GetAssignedContent(this ContentReference contentRef)
+        public static IEnumerable<PageData> GetAssignedContent(this PageData page)
         {
-            return CategoriesManager.GetContent(contentRef);
+            return CategoriesManager.GetContent(page.ContentLink);
         }
     }
 }
