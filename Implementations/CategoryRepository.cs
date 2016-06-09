@@ -28,7 +28,7 @@ namespace BlendInteractive.ExtendedCategories.Implementations
 
             var repo = ServiceLocator.Current.GetInstance<IContentRepository>();
             
-            return refs.Select(ca => repo.Get<PageData>(ca.ContentPage));
+            return refs.Select(ca => repo.Get<PageData>(ca.ContentPage)).Where(x => !x.IsDeleted);
         }
 
         public void DeleteAssignmentsByContent(ContentReference contentRef, string scope = null)
